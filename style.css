@@ -4,13 +4,14 @@
   --blue: #AEE3FF;
   --cream: #FFF8F2;
   --midnight: #2B1E34;
+  --wood: #D7A86E;
 }
 
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom, var(--pink), var(--blue));
   color: var(--midnight);
+  background: url("images/bg-sky.png") repeat-y center top / cover;
   overflow-x: hidden;
   transition: background 1s, color 1s;
 }
@@ -19,114 +20,135 @@ body {
 #loader {
   position: fixed;
   inset: 0;
-  background: var(--pink);
+  background: linear-gradient(var(--pink), var(--blue));
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  transition: opacity 0.8s ease;
+  transition: opacity 1s ease;
 }
+
 .loader-icon {
   width: 80px;
   animation: bounce 1s infinite alternate;
 }
-@keyframes bounce {
-  to { transform: translateY(-10px); }
-}
+
 #loader p {
   font-family: 'Press Start 2P', cursive;
-  font-size: 0.6rem;
-  margin-top: 10px;
+  font-size: 0.7rem;
+  color: var(--midnight);
+  margin-top: 15px;
+}
+
+@keyframes bounce {
+  to { transform: translateY(-10px); }
 }
 
 /* Header */
 header {
+  background: url("images/panel.png") repeat center/200px;
   text-align: center;
   padding: 5rem 1rem 3rem;
+  border-bottom: 4px solid var(--wood);
 }
+
 header h1 {
   font-family: 'Press Start 2P', cursive;
   font-size: 1.5rem;
 }
+
 button#nightToggle {
   margin-top: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.2rem;
   background: var(--lavender);
-  border: none;
+  border: 2px solid var(--wood);
   border-radius: 8px;
   cursor: pointer;
+  box-shadow: 0 3px 0 var(--wood);
 }
 
-/* Sections */
-section {
-  padding: 3rem 2rem;
-  text-align: center;
+/* About Section */
+#about {
+  background: url("images/bg-grass.png") repeat center/contain;
+  color: #2a1b30;
+  padding: 4rem 2rem;
+  border-top: 4px solid var(--wood);
+  border-bottom: 4px solid var(--wood);
 }
 
 #about img {
-  width: 120px;
-  border-radius: 10px;
+  width: 128px;
+  border: 3px solid var(--wood);
+  border-radius: 8px;
 }
 
 /* Projects */
+#projects {
+  padding: 4rem 2rem;
+  background: var(--cream);
+}
+
 .project-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
 }
+
 .card {
-  background: var(--cream);
-  border-radius: 12px;
+  background: url("images/panel.png") repeat center/200px;
+  border: 3px solid var(--wood);
+  border-radius: 8px;
   padding: 1rem;
-  max-width: 250px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 250px;
+  box-shadow: 0 5px 0 var(--wood);
   transition: transform 0.3s ease;
 }
-.card:hover { transform: translateY(-5px); }
-.card img { width: 100%; border-radius: 10px; }
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 6px;
+  border: 2px solid var(--wood);
+}
+
 .card .btn {
   display: inline-block;
-  margin-top: 0.5rem;
-  background: var(--lavender);
+  margin-top: 0.7rem;
   padding: 0.5rem 1rem;
+  background: var(--lavender);
+  color: var(--midnight);
   border-radius: 6px;
   text-decoration: none;
-  color: var(--midnight);
   font-weight: bold;
+  border: 2px solid var(--wood);
 }
 .card .btn.play {
   background: var(--blue);
 }
 
-/* Contact */
-.socials a {
-  margin: 0 1rem;
-  color: var(--midnight);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* Footer */
-footer {
-  background: var(--midnight);
-  color: white;
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-/* Night mode */
+/* Night Mode */
 body.night {
   background: radial-gradient(var(--midnight), #000);
   color: var(--cream);
 }
-body.night footer {
-  background: #000;
+body.night #projects {
+  background: #3a2c4d;
 }
 body.night .card {
-  background: #3a2c4d;
+  background: #2B1E34;
   color: var(--cream);
+}
+
+/* Footer */
+footer {
+  background: var(--wood);
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
 }
 
 /* Sparkles */
@@ -134,19 +156,11 @@ body.night .card {
   position: absolute;
   width: 16px;
   pointer-events: none;
-  animation: fadeOut 1s ease forwards;
+  animation: fadeOut 1.2s ease forwards;
 }
 @keyframes fadeOut {
   to {
     opacity: 0;
     transform: scale(2);
-  }
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .project-grid {
-    flex-direction: column;
-    align-items: center;
   }
 }

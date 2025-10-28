@@ -1,163 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🌸 Sharhazad Hogue | Software Engineer</title>
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineer Portfolio - Game World</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <!-- Loader -->
-  <div id="loader">
-    <img src="images/loader-farm.png" alt="Loading..." class="loader-icon">
-    <p>Loading your farm...</p>
-  </div>
-
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="container nav-container">
-      <div class="nav-logo"><i class="fas fa-seedling"></i> Sharhazad</div>
-      <ul class="nav-menu">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-      <div class="hamburger">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
+    <!-- Screen Loader -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="pixel-farm">
+                <div class="pixel-character">🌱</div>
+                <div class="loading-text">Loading Farm...</div>
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+            </div>
+        </div>
     </div>
-  </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container hero-content">
-      <div class="hero-text">
-        <h1 class="hero-title">Sharhazad Hogue</h1>
-        <p class="hero-subtitle">Android • Web • Databases • Games</p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <button id="nightToggle" class="btn btn-secondary">🌙 Night Mode</button>
-        </div>
-      </div>
-      <div class="hero-image">
-        <div class="floating-elements">
-          <div class="floating-icon"><i class="fab fa-android"></i></div>
-          <div class="floating-icon"><i class="fas fa-globe"></i></div>
-          <div class="floating-icon"><i class="fas fa-database"></i></div>
-          <div class="floating-icon"><i class="fas fa-gamepad"></i></div>
-        </div>
-      </div>
+    <!-- Night Mode Toggle -->
+    <div class="theme-toggle">
+        <button id="themeToggle" class="theme-btn" aria-label="Toggle night mode">
+            <div class="theme-content">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+                <span class="theme-text">🌙 Night Mode</span>
+            </div>
+        </button>
     </div>
-  </section>
 
-  <!-- About Section -->
-  <section id="about" class="about">
-    <div class="container about-content">
-      <div class="about-text">
-        <img src="images/avatar.png" alt="Avatar">
-        <h2>About Me</h2>
-        <p>Hey there! I’m Sharhazad, a software engineer cultivating creative digital experiences. I specialize in Android apps, websites, databases, and mobile games.</p>
-      </div>
-      <div class="about-stats">
-        <div class="stat-item">
-          <div class="stat-number">5+</div>
-          <p>Years Experience</p>
+    <div class="game-container">
+        <!-- Header with pixel art style -->
+        <header class="game-header">
+            <div class="header-content">
+                <h1 class="pixel-title">🌟 Developer's Valley 🌟</h1>
+                <p class="subtitle">Welcome to my coding adventure!</p>
+            </div>
+        </header>
+
+        <!-- Main game world -->
+        <main class="game-world">
+            <!-- Character introduction -->
+            <section class="character-intro">
+                <div class="character-container">
+                    <div class="character-sprite">
+                        <img src="profile-pic.png" alt="Sharhazad's Portrait" class="profile-image">
+                    </div>
+                    <div class="speech-bubble">
+                        <p>Hello! I'm a Software Engineer who loves creating digital experiences. Explore my skills by clicking on the different areas!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skill areas as game locations -->
+            <div class="skill-areas">
+                <!-- Android Development Area -->
+                <div class="skill-area android-area" id="android-area">
+                    <div class="area-icon">📱</div>
+                    <h3>Mobile App Valley</h3>
+                    <p>Android Development</p>
+                    <div class="skill-details hidden">
+                        <h4>🏗️ Mobile App Creation</h4>
+                        <ul>
+                            <li>Native Android Development (Java/Kotlin)</li>
+                            <li>UI/UX Design for Mobile</li>
+                            <li>API Integration & Data Management</li>
+                            <li>Play Store Publishing</li>
+                            <li>Cross-platform Development</li>
+                        </ul>
+                        <div class="projects">
+                            <h5>Featured Projects:</h5>
+                            <div class="project-card">
+                                <div class="project-item">
+                                    <span>📋 Task Manager App</span>
+                                    <div class="project-links">
+                                        <a href="#" class="project-link">🌐 Live Demo</a>
+                                        <a href="#" class="project-link">📱 Download APK</a>
+                                    </div>
+                                </div>
+                                <div class="project-item">
+                                    <span>🎮 Mobile Game</span>
+                                    <div class="project-links">
+                                        <a href="#" class="project-link">🌐 Play Online</a>
+                                        <a href="#" class="project-link">📱 Download APK</a>
+                                    </div>
+                                </div>
+                                <div class="project-item">
+                                    <span>🛒 E-commerce App</span>
+                                    <div class="project-links">
+                                        <a href="#" class="project-link">🌐 Visit Site</a>
+                                        <a href="#" class="project-link">📱 Download APK</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Development Area -->
+                <div class="skill-area web-area" id="web-area">
+                    <div class="area-icon">🌐</div>
+                    <h3>Web Development Forest</h3>
+                    <p>Website Creation</p>
+                    <div class="skill-details hidden">
+                        <h4>🌳 Website Creation</h4>
+                        <ul>
+                            <li>Frontend: HTML, CSS, JavaScript</li>
+                            <li>React, Vue.js, Angular</li>
+                            <li>Backend: Node.js, Python, PHP</li>
+                            <li>Responsive Design & Accessibility</li>
+                            <li>Progressive Web Apps (PWA)</li>
+                        </ul>
+                        <div class="projects">
+                            <h5>Featured Projects:</h5>
+                            <div class="project-card">
+                                <div class="project-item">
+                                    <span>🏢 Corporate Website</span>
+                                    <div class="project-links">
+                                        <a href="#" class="project-link">🌐 Visit Site</a>
+                                        <a href="#" class="project-link">📁 View Code</a>
+                                    </div>
+                                </div>
+                                <div class="project-item">
+                                    <span>🛍️ E-commerce Platform</span>
+                                    <div class="project-links">
+                                        <a href="#" class="project-link">🌐 Live Demo</a>
+                                        <a href="#" class="project-link">📁 GitHub Repo</a>
+                                    </div>
+                                </div>
+                                <div class="project-item">
+                                    <span>📊 Dashboard Application</span>
+                                    <div class="project-links">
+                                        <a href="#" class="project-link">🌐 Try Demo</a>
+                                        <a href="#" class="project-link">📁 Source Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database Area -->
+                <div class="skill-area database-area" id="database-area">
+                    <div class="area-icon">🗄️</div>
+                    <h3>Data Crystal Caves</h3>
+                    <p>Database Creation</p>
+                    <div class="skill-details hidden">
+                        <h4>💎 Database Creation</h4>
+                        <ul>
+                            <li>SQL Databases (MySQL, PostgreSQL)</li>
+                            <li>NoSQL Databases (MongoDB, Firebase)</li>
+                            <li>Database Design & Optimization</li>
+                            <li>Data Migration & ETL Processes</li>
+                            <li>Cloud Database Solutions</li>
+                        </ul>
+                        <div class="projects">
+                            <h5>Featured Projects:</h5>
+                            <div class="project-card">
+                                <div class="project-item">
+                                    <span>📈 Analytics System</span>
+                                    <div class="project-links">
+                                        <a href="#" class="project-link">🌐 View Demo</a>
+                                        <a href="#" class="project-link">📊 Database Schema</a>
+                                    </div>
+                                </div>
+                                <div class="project-item">
+                                    <span>👥 User Management DB</span>
+                                    <div class="project-links">
+                                        <a href="#" class="project-link">🌐 Admin Panel</a>
+                                        <a href="#" class="project-link">📁 Documentation</a>
+                                    </div>
+                                </div>
+                                <div class="project-item">
+                                    <span>📦 Inventory System</span>
+                                    <div class="project-links">
+                                        <a href="#" class="project-link">🌐 Live System</a>
+                                        <a href="#" class="project-link">📋 API Docs</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact/About section -->
+            <section class="contact-section">
+                <div class="contact-house">
+                    <div class="house-icon">🏠</div>
+                    <h3>Developer's Cottage</h3>
+                    <p>Let's connect and build something amazing together!</p>
+                    <div class="contact-links">
+                        <a href="#" class="contact-btn">📧 Email</a>
+                        <a href="#" class="contact-btn">💼 LinkedIn</a>
+                        <a href="#" class="contact-btn">🐙 GitHub</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Game UI Elements -->
+        <div class="game-ui">
+            <div class="health-bar">
+                <span>💻 Coding Energy:</span>
+                <div class="energy-bar">
+                    <div class="energy-fill"></div>
+                </div>
+            </div>
+            <div class="level-indicator">
+                <span>⭐ Level 2: Senior Developer</span>
+            </div>
         </div>
-        <div class="stat-item">
-          <div class="stat-number">12</div>
-          <p>Projects Completed</p>
+
+        <!-- Floating particles for ambiance -->
+        <div class="particles">
+            <div class="particle">✨</div>
+            <div class="particle">🌸</div>
+            <div class="particle">💫</div>
+            <div class="particle">🦋</div>
+            <div class="particle">🌺</div>
         </div>
-      </div>
     </div>
-  </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="projects">
-    <div class="container">
-      <div class="section-header">
-        <h2>My Projects</h2>
-        <p>Some of my favorite creations and experiments</p>
-      </div>
-      <div class="projects-grid">
-
-        <div class="project-card">
-          <div class="project-image">
-            <img src="images/cloud.png" alt="Project Thumbnail">
-          </div>
-          <div class="project-content">
-            <h3>Harvest Planner</h3>
-            <p>A cozy farming planner app built with Kotlin.</p>
-            <a href="projects/example-app.apk" class="project-link">⬇️ Download APK</a>
-          </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo"><i class="fas fa-seedling"></i> Sharhazad</div>
+            <div class="footer-bottom">© Sharhazad Hogue 2025 | Crafted with 💖 and stardust</div>
         </div>
+    </footer>
 
-        <div class="project-card">
-          <div class="project-image">
-            <img src="images/moon.png" alt="Project Thumbnail">
-          </div>
-          <div class="project-content">
-            <h3>Starry Game</h3>
-            <p>Play my pixel farming adventure right in your browser!</p>
-            <a href="projects/example-webgame/index.html" target="_blank" class="project-link">▶️ Play in Browser</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <div class="container contact-content">
-      <div>
-        <h2>Let’s Build Something Together 💌</h2>
-        <p>Reach out via <a href="mailto:you@example.com">email</a> or find me here:</p>
-        <div class="socials">
-          <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-          <a href="https://itch.io/yourusername" target="_blank">itch.io</a>
-        </div>
-      </div>
-      <div class="contact-form">
-        <div class="form-group">
-          <input type="text" placeholder="Your Name">
-        </div>
-        <div class="form-group">
-          <input type="email" placeholder="Your Email">
-        </div>
-        <div class="form-group">
-          <textarea placeholder="Your Message"></textarea>
-        </div>
-        <button class="btn btn-primary">Send Message</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-logo"><i class="fas fa-seedling"></i> Sharhazad</div>
-      <div class="footer-bottom">© Sharhazad Hogue 2025 | Crafted with 💖 and stardust</div>
-    </div>
-  </footer>
-
-  <!-- Decorative Particles -->
-  <div class="particles"></div>
-
-  <!-- JS -->
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

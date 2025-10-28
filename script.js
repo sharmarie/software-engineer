@@ -1,18 +1,98 @@
-// Night mode toggle
-document.getElementById('nightToggle').addEventListener('click', () => {
+// -------------------------
+// NIGHT MODE TOGGLE
+// -------------------------
+const nightToggle = document.getElementById('nightToggle');
+nightToggle.addEventListener('click', () => {
   document.body.classList.toggle('night');
 });
 
-// Extended Loader (3 seconds)
+// -------------------------
+// LOADER (3 seconds)
+// -------------------------
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
   setTimeout(() => {
     loader.style.opacity = '0';
     setTimeout(() => loader.style.display = 'none', 1000);
-  }, 3000); // stays visible for 3 seconds
+  }, 3000); // loader visible for 3 seconds
 });
 
-// Sparkle Easter eggs
+// -------------------------
+// HAMBURGER MOBILE NAV
+// -------------------------
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+  hamburger.classList.toggle('open');
+});
+
+// Close mobile menu when link clicked
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+    hamburger.classList.remove('open');
+  });
+});
+
+// -------------------------
+// ACTIVE NAV LINK ON SCROLL
+// -------------------------
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-link');
+
+window.addEventListener('scroll', () => {
+  const scrollPos = window.scrollY + 100;
+  sections.forEach(section => {
+    if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+      navLinks.forEach(link => link.classList.remove('active'));
+      const id = section.getAttribute('id');
+      const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
+      if (activeLink) activeLink.classList.add('active');
+    }
+  });
+
+  // Optional: Navbar scroll effect
+  const navbar = document.querySelector('.navbar');
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// -------------------------
+// HERO FLOATING ICONS
+// -------------------------
+const floatingIcons = document.querySelectorAll('.floating-icon');
+
+floatingIcons.forEach(icon => {
+  const randomDelay = Math.random() * 2; // seconds
+  icon.style.animationDelay = `${randomDelay}s`;
+});
+
+// -------------------------
+// PARTICLES BACKGROUND
+// -------------------------
+const particleContainer = document.querySelector('.particles');
+
+function createParticle() {
+  const particle = document.createElement('div');
+  particle.className = 'particle';
+  particle.style.left = `${Math.random() * 100}vw`;
+  particle.style.fontSize = `${Math.random() * 1.2 + 0.8}rem`;
+  particle.style.animationDuration = `${Math.random() * 8 + 6}s`;
+  particle.innerHTML = '✨';
+  particleContainer.appendChild(particle);
+  setTimeout(() => particle.remove(), 14000); // remove after animation
+}
+
+setInterval(createParticle, 400);
+
+// -------------------------
+// SPARKLE EASTER EGGS
+// -------------------------
 document.body.addEventListener('click', (e) => {
   const star = document.createElement('img');
   star.src = 'images/star.png';
@@ -22,3 +102,4 @@ document.body.addEventListener('click', (e) => {
   document.body.appendChild(star);
   setTimeout(() => star.remove(), 1200);
 });
+

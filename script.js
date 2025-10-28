@@ -7,14 +7,15 @@ nightToggle.addEventListener('click', () => {
 });
 
 // -------------------------
-// LOADER (3 seconds)
+// LOADER (full-screen overlay)
 // -------------------------
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
+  // Wait 3 seconds to simulate loading
   setTimeout(() => {
     loader.style.opacity = '0';
     setTimeout(() => loader.style.display = 'none', 1000);
-  }, 3000); // loader visible for 3 seconds
+  }, 3000);
 });
 
 // -------------------------
@@ -37,6 +38,22 @@ document.querySelectorAll('.nav-link').forEach(link => {
 });
 
 // -------------------------
+// SMOOTH SCROLL FOR ANCHORS
+// -------------------------
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if(target){
+      window.scrollTo({
+        top: target.offsetTop - 70,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+// -------------------------
 // ACTIVE NAV LINK ON SCROLL
 // -------------------------
 const sections = document.querySelectorAll('section');
@@ -44,6 +61,7 @@ const navLinks = document.querySelectorAll('.nav-link');
 
 window.addEventListener('scroll', () => {
   const scrollPos = window.scrollY + 100;
+
   sections.forEach(section => {
     if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
       navLinks.forEach(link => link.classList.remove('active'));
@@ -53,7 +71,7 @@ window.addEventListener('scroll', () => {
     }
   });
 
-  // Optional: Navbar scroll effect
+  // Navbar scroll effect
   const navbar = document.querySelector('.navbar');
   if (window.scrollY > 50) {
     navbar.classList.add('scrolled');
@@ -66,7 +84,6 @@ window.addEventListener('scroll', () => {
 // HERO FLOATING ICONS
 // -------------------------
 const floatingIcons = document.querySelectorAll('.floating-icon');
-
 floatingIcons.forEach(icon => {
   const randomDelay = Math.random() * 2; // seconds
   icon.style.animationDelay = `${randomDelay}s`;
@@ -85,7 +102,7 @@ function createParticle() {
   particle.style.animationDuration = `${Math.random() * 8 + 6}s`;
   particle.innerHTML = '✨';
   particleContainer.appendChild(particle);
-  setTimeout(() => particle.remove(), 14000); // remove after animation
+  setTimeout(() => particle.remove(), 14000);
 }
 
 setInterval(createParticle, 400);
@@ -102,4 +119,3 @@ document.body.addEventListener('click', (e) => {
   document.body.appendChild(star);
   setTimeout(() => star.remove(), 1200);
 });
-

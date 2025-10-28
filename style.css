@@ -1,9 +1,6 @@
 /* styles.css
    Full transformation: pastel retro / frosted glass / Press Start + Quicksand mix
 */
-
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Press+Start+2P&display=swap');
-
 :root{
   /* Pastel palette */
   --pink-1: #FFB6C1;

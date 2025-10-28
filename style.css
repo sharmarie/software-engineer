@@ -493,4 +493,32 @@ a:focus, button:focus, input:focus, textarea:focus{ outline: 3px solid rgba(153,
 /* small tweak for high-contrast legibility on cards */
 .skill-card p, .project-content p, .about-text p{ color: #3b3b47; }
 
+#loader {
+  position: fixed;
+  inset: 0;
+  background: var(--gradient-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 1s ease;
+}
+
+#loader .loader-inner {
+  text-align: center;
+}
+
+#loader .loader-icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 16px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
 /* END of transformed stylesheet */
